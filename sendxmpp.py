@@ -59,8 +59,8 @@ if __name__ == '__main__':
 
     p = argparse.ArgumentParser()
     p.add_argument('recipients', metavar='<file or JID>', nargs='+', type=file_or_jid, help='file format is one JID per line')
-    p.add_argument('-c', '--config', nargs=1, default=os.path.expanduser('~/.sendxmpp'), type=argparse.FileType('r'))
-    p.add_argument('-s', '--subject', nargs=1, default='')
+    p.add_argument('-c', '--config', nargs='?', default=os.path.expanduser('~/.sendxmpp'), type=argparse.FileType('r'))
+    p.add_argument('-s', '--subject', nargs='?', default='')
     try:
         global_args = p.parse_args()
     except argparse.ArgumentError as e:
