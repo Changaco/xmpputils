@@ -1,0 +1,12 @@
+[Unit]
+Description=XMPP Echo Bot
+After=prosody.service
+
+[Service]
+User=prosody
+Group=prosody
+Type=simple
+ExecStart=/usr/bin/echobot.py
+
+[Install]
+WantedBy=multi-user.target

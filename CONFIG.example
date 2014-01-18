@@ -1,3 +1,7 @@
-[DEFAULT]
-jid = foo@example.net
+[echobot]
+jid = echo@example.net
+password = azerty
+
+[sendxmpp]
+jid = username@example.net
 password = qwerty
