@@ -49,3 +49,6 @@ Usage: (assuming you're in xmpputils/)
  echo "This is a test" | ./sendxmpp.py user@host
 ```
 
+```
+./sendxmpp.py < README.md user@host
+```
