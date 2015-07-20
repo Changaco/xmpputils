@@ -4,51 +4,22 @@
 
 `sendxmpp.py` is the XMPP equivalent of sendmail. It is an alternative to the old sendxmpp written in Perl.
 
-# Dependencies
+Dependencies:
  
- This requires Python 3.X
-```
-sudo apt-get install python3
-```
+- python 3
+- dnspython
+- sleekxmpp
 
-Install dnspython
-  ```
-  wget https://github.com/rthalley/dnspython/archive/v1.11.1-py3.tar.gz
+To install them on Ubuntu:
 
-  tar xvf v1.11.1-py3.tar.gz
-  
-  cd dnspython-1.11.1-py3/
-  
-  sudo python3 setup.py install --record files.txt
-  
-  cd ../
-  ```
+    sudo apt-get install python3 python3-pip
+    sudo pip install dnspython sleekxmpp
 
-Install SleekXMPP
- ```
- git clone https://github.com/fritzy/SleekXMPP
- 
- cd SleekXMPP/
- 
- sudo  python3 setup.py install
- 
- cd ../
- ```
+Installation: just put the scripts wherever you want.
 
- Installation: just put the scripts wherever you want.
-   
+Configuration: `cp CONFIG.example ~/.xmpputils` and edit `~/.xmpputils` with your XMPP credentials
 
-Configuration: see `CONFIG.example`, default config path is `~/.xmpputils`
-```
-cp CONFIG.example `~/.xmpputils
-```
-Edit `~/.xmpputils` with your xmpp credentials.
+Usage examples:
 
-Usage: (assuming you're in xmpputils/)
-```
- echo "This is a test" | ./sendxmpp.py user@host
-```
-
-```
-./sendxmpp.py < README.md user@host
-```
+- `echo "This is a test" | sendxmpp.py user@host`
+- `sendxmpp.py user@host <README.md`
